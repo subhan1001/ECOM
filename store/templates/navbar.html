@@ -1,7 +1,24 @@
 <!-- Navigation-->
+<style>
+        /* Default: all on one line */
+        .mobile-break::before {
+          content: " ";
+        }
+        
+        /* On small screens: insert line break before "Complex" */
+        @media (max-width: 500px) {
+          .mobile-break::before {
+            content: "\A"; /* Line break */
+            white-space: pre;
+          }
+        }
+
+</style>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{% url 'home' %}">MS Retail Complex</a>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                          MS Retail <span class="mobile-break">Complex</span>
+                        </a>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
